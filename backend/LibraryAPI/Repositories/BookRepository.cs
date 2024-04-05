@@ -24,9 +24,9 @@ public class BookRepository : IBookRepository
                 SELECT 
                 book_id AS BookId, title, first_name AS FirstName, last_name AS LastName, total_copies AS TotalCopies, copies_in_use AS CopiesInUse, type, isbn, category, publisher
                 FROM books 
-                WHERE FirstName LIKE @FirstName 
-                OR LastName LIKE @LastName
-                OR (FirstName LIKE @FirstName AND LastName LIKE @LastName)";
+                WHERE first_name LIKE @FirstName 
+                OR last_name LIKE @LastName
+                OR (first_name LIKE @FirstName AND last_name LIKE @LastName)";
 
         return await dbConnection.QueryAsync<Book>(query,
             new {FirstName = $"%{author}%", LastName = $"%{author}%"});
