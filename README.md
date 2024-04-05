@@ -1,6 +1,6 @@
-Library 
+# Library 
 
-Architecture Overview
+## Architecture Overview
 This project is structured as a full-stack application with the following components:
 
 Frontend: A React-based single-page application (SPA) that provides the user interface.
@@ -17,14 +17,18 @@ Node.js and npm
 Getting Started
 Follow these steps to get your development environment set up:
 
-Clone the repository
+## Clone the repository
 
-
+```
 git clone https://github.com/walter-lopes/library.git
 cd library
-Run the application using Docker Compose, it inits the database with our seed
+```
 
+## Run the application using Docker Compose, it inits the database with our seed
+
+```
 docker compose up -d
+```
 
 This command builds and starts the containers for the React frontend, .NET Core backend, and MySQL database.
 
@@ -33,30 +37,39 @@ Accessing the application
 Frontend is accessible at http://localhost:3000
 Backend API can be accessed via http://localhost:5000/swaggger
 
-Development
+# Development
 
-Frontend Development
-Navigate to the frontend directory:
+## Frontend Development
+###Navigate to the frontend directory:
 
+```
 
 cd frontend/library
-
-Install dependencies:
-
+```
+### Install dependencies:
+```
 npm install
-
-Run the React development server:
+```
+### Run the React development server:
+```
 npm start
+```
 
-
-Backend Development
-Navigate to the backend directory:
-
+## Backend Development
+### Navigate to the backend directory:
+```
 
 cd backend/LibraryAPI
-Restore .NET dependencies:
 
+```
+### Restore .NET dependencies:
+
+```
 dotnet restore
-Run the .NET Core development server:
 
+```
+### Run the .NET Core development server:
+```
 dotnet run
+
+```
