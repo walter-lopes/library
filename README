@@ -1,0 +1,82 @@
+Library 
+
+Architecture Overview
+This project is structured as a full-stack application with the following components:
+
+Frontend: A React-based single-page application (SPA) that provides the user interface.
+Backend: A RESTful API developed with .NET Core to handle business logic and data access.
+Database: MySQL database to store application data.
+Docker Compose: Used to orchestrate the entire application stack for development and production environments.
+Prerequisites
+
+Before you begin, ensure you have installed all of the following on your development machine:
+
+Docker and Docker Compose
+.NET Core SDK (version specify here)
+Node.js and npm
+Getting Started
+Follow these steps to get your development environment set up:
+
+Clone the repository
+
+bash
+Copy code
+git clone https://yourrepositoryurl.git
+cd yourrepository
+Run the application using Docker Compose
+
+From the root of the project, run:
+
+bash
+Copy code
+docker-compose up --build
+This command builds and starts the containers for the React frontend, .NET Core backend, and MySQL database.
+
+Accessing the application
+
+Frontend is accessible at http://localhost:3000
+Backend API can be accessed via http://localhost:5000/api
+Development
+Frontend Development
+Navigate to the frontend directory:
+bash
+Copy code
+cd frontend
+Install dependencies:
+bash
+Copy code
+npm install
+Run the React development server:
+bash
+Copy code
+npm start
+Backend Development
+Navigate to the backend directory:
+bash
+Copy code
+cd backend
+Restore .NET dependencies:
+bash
+Copy code
+dotnet restore
+Run the .NET Core development server:
+bash
+Copy code
+dotnet run
+Testing
+Explain how to run the automated tests for this system (if applicable).
+
+Deployment
+Provide additional notes about how to deploy this on a live system (if applicable).
+
+Contributing
+Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+
+License
+This project is licensed under the MIT License - see the file for details.
+
+Acknowledgments
+Mention anyone/anything that helped your project.
+External libraries used
+Inspiration
+etc.
