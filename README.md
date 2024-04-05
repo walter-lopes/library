@@ -19,64 +19,44 @@ Follow these steps to get your development environment set up:
 
 Clone the repository
 
-bash
-Copy code
-git clone https://yourrepositoryurl.git
-cd yourrepository
-Run the application using Docker Compose
 
-From the root of the project, run:
+git clone https://github.com/walter-lopes/library.git
+cd library
+Run the application using Docker Compose, it inits the database with our seed
 
-bash
-Copy code
-docker-compose up --build
+docker compose up -d
+
 This command builds and starts the containers for the React frontend, .NET Core backend, and MySQL database.
 
 Accessing the application
 
 Frontend is accessible at http://localhost:3000
-Backend API can be accessed via http://localhost:5000/api
+Backend API can be accessed via http://localhost:5000/swaggger
+
 Development
+
 Frontend Development
 Navigate to the frontend directory:
-bash
-Copy code
-cd frontend
+
+
+cd frontend/library
+
 Install dependencies:
-bash
-Copy code
+
 npm install
+
 Run the React development server:
-bash
-Copy code
 npm start
+
+
 Backend Development
 Navigate to the backend directory:
-bash
-Copy code
-cd backend
+
+
+cd backend/LibraryAPI
 Restore .NET dependencies:
-bash
-Copy code
+
 dotnet restore
 Run the .NET Core development server:
-bash
-Copy code
+
 dotnet run
-Testing
-Explain how to run the automated tests for this system (if applicable).
-
-Deployment
-Provide additional notes about how to deploy this on a live system (if applicable).
-
-Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
-
-License
-This project is licensed under the MIT License - see the file for details.
-
-Acknowledgments
-Mention anyone/anything that helped your project.
-External libraries used
-Inspiration
-etc.

@@ -42,12 +42,12 @@ public class GetBookByParamsResponseTest
 
         // Assert
         Assert.AreEqual(2, response.Items.Count());
-        Assert.AreEqual("Book Title 1", response.Items.First().BookTitle);
+        Assert.AreEqual("Book Title 1", response.Items.First().Title);
         Assert.AreEqual("Paulo Coelho", response.Items.First().Authors); 
         Assert.AreEqual("1/200", response.Items.First().AvailableCopies); 
         
         
-        Assert.AreEqual("Book Title 2", response.Items.Last().BookTitle);
+        Assert.AreEqual("Book Title 2", response.Items.Last().Title);
         Assert.AreEqual("J r r Martin", response.Items.Last().Authors);
         Assert.AreEqual("1/50", response.Items.Last().AvailableCopies); 
     }

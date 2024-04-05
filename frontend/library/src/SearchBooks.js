@@ -1,8 +1,9 @@
 // src/SearchBooks.js
 import React, { useState } from 'react';
+import './SearchBooks.css';
 
 const SearchBooks = () => {
-  const [filter, setFilter] = useState('author'); // Default search filter
+  const [filter, setFilter] = useState('author'); 
   const [query, setQuery] = useState('');
   const [books, setBooks] = useState([]);
 
@@ -12,16 +13,16 @@ const SearchBooks = () => {
     try {
       const response = await fetch(apiUrl);
       const data = await response.json();
-      setBooks(data.items); // Adjust based on your API's response structure
+      setBooks(data.items);
     } catch (error) {
       console.error('Failed to fetch books:', error);
     }
   };
 
   return (
-    <div>
-      <form onSubmit={searchBooks}>
-        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+    <div className="search-container">
+      <form onSubmit={searchBooks} className="search-form">
+        <select value={filter} onChange={(e) => setFilter(e.target.value)} className="search-select">
           <option value="author">Author</option>
           <option value="isbn">ISBN</option>
           <option value="category">Category</option>
@@ -31,12 +32,13 @@ const SearchBooks = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={`Search by ${filter}`}
+          className="search-input"
         />
-        <button type="submit">Search</button>
+        <button type="submit" className="search-button">Search</button>
       </form>
       <div>
         {books.length > 0 && (
-          <table>
+          <table className="books-table">
             <thead>
               <tr>
                 <th>Title</th>

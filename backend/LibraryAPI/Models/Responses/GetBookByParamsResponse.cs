@@ -17,7 +17,7 @@ public class GetBookByParamsItemResponse
 {
     public GetBookByParamsItemResponse(Book book)
     {
-        BookTitle = book.Title;
+        Title = book.Title;
         Publisher = book.Publisher;
         Authors = book.GetAuthor();
         Type = book.Type;
@@ -25,7 +25,7 @@ public class GetBookByParamsItemResponse
         Category = book.Category;
         AvailableCopies = book.GetAvailableCopies();
     }
-    public string BookTitle { get; set; }
+    public string Title { get; set; }
     public string Publisher { get; set; }
     public string Authors { get; set; }
     public string Type { get; set; }

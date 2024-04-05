@@ -27,7 +27,7 @@ public class BookService : IBookService
                 books = await _bookRepository.GetByCategoryAsync(request.Value);
                 break;
             default:
-                books = await _bookRepository.GetByISBNsync(request.Value);
+                books = await _bookRepository.GetByISBNAsync(request.Value);
                 break;
         }
 
