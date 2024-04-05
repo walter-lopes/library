@@ -13,7 +13,7 @@ public class Tests
             LastName = "Coelho"
         };
 
-        Assert.Equals(book.GetAuthor(), "Paulo Coelho");
+        Assert.AreEqual(book.GetAuthor(), "Paulo Coelho");
     }
     
     [Test]
@@ -25,6 +25,6 @@ public class Tests
             TotalCopies = 200
         };
 
-        Assert.Equals(book.GetAvailableCopies(), "1/200");
+        Assert.AreEqual(book.GetAvailableCopies(), "1/200");
     }
 }
