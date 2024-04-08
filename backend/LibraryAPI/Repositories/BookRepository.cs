@@ -37,7 +37,7 @@ public class BookRepository : IBookRepository
         await dbConnection.ExecuteAsync(query, book);
     }
 
-    public async Task<Book> GetByIdAsync(int id)
+    public async Task<Book> GetByIdAsync(int bookId)
     {
         using var dbConnection = Connection;
         dbConnection.Open();
@@ -45,9 +45,9 @@ public class BookRepository : IBookRepository
                 SELECT 
                 book_id AS BookId, title, first_name AS FirstName, last_name AS LastName, total_copies AS TotalCopies, copies_in_use AS CopiesInUse, type, isbn, category, publisher
                 FROM books 
-                WHERE BookId LIKE @id";
+                WHERE book_id = @bookId";
 
-        return await dbConnection.QueryFirstAsync(query, new {BookId = id});
+        return await dbConnection.QueryFirstAsync<Book>(query, new {BookId = bookId});
     }
 
     public async Task<IEnumerable<Book>> GetByAuthorAsync(string author)

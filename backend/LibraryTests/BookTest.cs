@@ -27,4 +27,29 @@ public class Tests
 
         Assert.AreEqual(book.GetAvailableCopies(), "1/200");
     }
+    
+    [Test]
+    public void Should_Return_IsAvailableCopies()
+    {
+        var book = new Book()
+        {
+            CopiesInUse = 200,
+            TotalCopies = 200
+        };
+
+        Assert.IsTrue(book.IsAllCopiesInUse());
+    }
+    
+    [Test]
+    public void Should_Return_IncreaseCopyInUse()
+    {
+        var book = new Book()
+        {
+            CopiesInUse = 1,
+            TotalCopies = 200
+        };
+        book.Rent();
+
+        Assert.AreEqual(book.CopiesInUse, 2);
+    }
 }

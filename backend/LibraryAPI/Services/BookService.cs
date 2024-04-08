@@ -14,6 +14,7 @@ public class BookService : IBookService
     public BookService(IBookRepository bookRepository)
     {
         _bookRepository = bookRepository;
+        // just for tests purpose
         _eventHandler = new AllCopiesUsedEventHandler();
     }
 
