@@ -23,4 +23,12 @@ public class BooksController : ControllerBase
 
         return Ok(response);
     }
+    
+    [HttpPost("rent")]
+    public async Task<IActionResult> RentAsync([FromBody] RentBookRequest request)
+    {
+        await _service.Rent(request);
+
+        return Ok();
+    }
 }

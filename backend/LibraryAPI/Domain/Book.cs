@@ -28,4 +28,19 @@ public class Book
     {
         return $"{CopiesInUse}/{TotalCopies}";
     }
+
+    public void Rent()
+    {
+        CopiesInUse = CopiesInUse + 1;
+    }
+
+    public bool IsAllCopiesInUse()
+    {
+        return CopiesInUse == TotalCopies;
+    }
+}
+
+public class AllCopiesUsedEvent
+{
+    public int BookId { get; set; }
 }

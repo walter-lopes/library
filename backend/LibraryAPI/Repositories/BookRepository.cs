@@ -16,6 +16,40 @@ public class BookRepository : IBookRepository
     
     public IDbConnection Connection => new MySqlConnection(_connectionString);
 
+    public async Task UpdateAsync(Book book)
+    {
+        using var dbConnection = Connection;
+        dbConnection.Open();
+        const string query = @"
+                UPDATE books
+                SET 
+                    title = @Title,
+                    first_name = @FirstName,
+                    last_name = @LastName,
+                    total_copies = @TotalCopies,
+                    copies_in_use = @CopiesInUse,
+                    type = @Type,
+                    isbn = @ISBN,
+                    category = @Category,
+                    publisher = @Publisher
+                WHERE book_id = @BookId";
+
+        await dbConnection.ExecuteAsync(query, book);
+    }
+
+    public async Task<Book> GetByIdAsync(int id)
+    {
+        using var dbConnection = Connection;
+        dbConnection.Open();
+        var query = @"
+                SELECT 
+                book_id AS BookId, title, first_name AS FirstName, last_name AS LastName, total_copies AS TotalCopies, copies_in_use AS CopiesInUse, type, isbn, category, publisher
+                FROM books 
+                WHERE BookId LIKE @id";
+
+        return await dbConnection.QueryFirstAsync(query, new {BookId = id});
+    }
+
     public async Task<IEnumerable<Book>> GetByAuthorAsync(string author)
     {
         using var dbConnection = Connection;

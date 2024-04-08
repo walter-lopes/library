@@ -5,5 +5,6 @@ namespace LibraryAPI.Services;
 
 public interface IBookService
 {
+    Task Rent(RentBookRequest request);
     Task<GetBookByParamsResponse> GetBooksByParams(GetBooksByParamsRequest request);
 }
